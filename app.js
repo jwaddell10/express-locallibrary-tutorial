@@ -13,6 +13,10 @@ const mongoose = require('mongoose');
 mongoose.set('strictQuery', 'false');
 const mongoDB = 'mongodb+srv://jwad1991:WxUOhs3DhyaHI4FQ@cluster0.omk10q9.mongodb.net/local_library?retryWrites=true&w=majority'
 
+const wiki = require("./wiki.js");
+// …
+app.use("/wiki", wiki);
+
 main().catch((err) => console.log(err));
 
 async function main() {
