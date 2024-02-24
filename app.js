@@ -7,17 +7,13 @@ const logger = require("morgan");
 const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 const catalogRouter = require("./routes/catalog"); //Import routes for "catalog" area of site
-
-
+const wiki = require("./routes/wiki.js");
+// …  
 const app = express();
 
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', 'false');
 const mongoDB = 'mongodb+srv://jwad1991:WxUOhs3DhyaHI4FQ@cluster0.omk10q9.mongodb.net/local_library?retryWrites=true&w=majority'
-
-const wiki = require("./wiki.js");
-// …
-app.use("/wiki", wiki);
 
 main().catch((err) => console.log(err));
 
@@ -38,6 +34,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/catalog", catalogRouter); // Add catalog routes to middleware chain.
+app.use("/wiki", wiki);
 
 
 // catch 404 and forward to error handler
