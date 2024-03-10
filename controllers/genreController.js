@@ -17,7 +17,6 @@ exports.genre_create_get = (req, res, next) => {
   res.render("genre_form", { title: "Create Genre" });
 };
 
-
 // Handle Genre create on POST.
 exports.genre_create_post = [
   // Validate and sanitize the name field.
