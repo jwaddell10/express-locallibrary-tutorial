@@ -13,7 +13,6 @@ block content
             option(value=book._id, selected) #{book.title}
           else
             option(value=book._id) #{book.title}
-
     div.form-group
       label(for='imprint') Imprint:
       input#imprint.form-control(type='text' placeholder='Publisher and date information' name='imprint' required value=(undefined===bookinstance ? '' : bookinstance.imprint) )
